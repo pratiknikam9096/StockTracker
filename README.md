@@ -1,3 +1,8 @@
+Here is your improved and **professionally styled** `README.md` for the **📈 Real-Time Stock Market Tracker**, with aligned markdown tables, cleaned formatting, consistent headings, and clear code blocks:
+
+---
+
+````markdown
 # 📈 Real-Time Stock Market Tracker
 
 A high-performance real-time stock market tracking platform that streams live market data, handles user interactions, and delivers updates instantly via WebSockets.
@@ -6,16 +11,16 @@ A high-performance real-time stock market tracking platform that streams live ma
 
 ## 🚀 Tech Stack
 
-| Layer               | Technology                    | Description                                           |
-|---------------------|-------------------------------|-------------------------------------------------------|
-| **Frontend**         | React + TypeScript            | Interactive UI with live charts and alerts            |
-| **API Server**       | Node.js (Express)             | Handles REST endpoints and business logic             |
-| **Real-Time Stream** | Apache Kafka                  | Ingests and distributes stock market data             |
-| **Consumer Services**| Node.js                       | Kafka consumers for processing and storing data       |
-| **WebSocket Server** | WebSocket (native)            | Pushes live updates to users in real-time             |
-| **Hot Database**     | MongoDB                       | Stores active user sessions, watchlists, preferences  |
-| **Cold Database**    | Cassandra                     | Stores historical stock data for analytics            |
-| **CI/CD**            | GitLab CI/CD                  | Continuous Integration and Deployment workflows       |
+| Layer               | Technology         | Description                                            |
+|---------------------|--------------------|--------------------------------------------------------|
+| **Frontend**         | React + TypeScript | Interactive UI with live charts and alerts             |
+| **API Server**       | Node.js (Express)  | Handles REST endpoints and business logic              |
+| **Real-Time Stream** | Apache Kafka       | Ingests and distributes stock market data              |
+| **Consumer Services**| Node.js            | Kafka consumers for processing and storing data        |
+| **WebSocket Server** | WebSocket (native) | Pushes live updates to users in real-time              |
+| **Hot Database**     | MongoDB            | Stores active user sessions, watchlists, preferences   |
+| **Cold Database**    | Cassandra          | Stores historical stock data for analytics             |
+| **CI/CD**            | GitLab CI/CD       | Continuous Integration and Deployment workflows        |
 
 ---
 
@@ -34,46 +39,46 @@ A high-performance real-time stock market tracking platform that streams live ma
 
 ## 📁 Project Structure
 
+```bash
 .
-├── client/ # React + TypeScript frontend
-│ ├── components/
-│ ├── pages/
-│ └── services/
+├── client/                  # React + TypeScript frontend
+│   ├── components/
+│   ├── pages/
+│   └── services/
 │
-├── server/ # Node.js backend
-│ ├── api/ # REST endpoints
-│ ├── consumers/ # Kafka consumers
-│ ├── websockets/ # WebSocket server
-│ ├── models/ # MongoDB + Cassandra schema handlers
-│ └── utils/
+├── server/                  # Node.js backend
+│   ├── api/                 # REST endpoints
+│   ├── consumers/           # Kafka consumers
+│   ├── websockets/          # WebSocket server
+│   ├── models/              # MongoDB + Cassandra schema handlers
+│   └── utils/
 │
-├── kafka/ # Kafka setup and topic configs
-├── ci-cd/ # GitLab CI/CD pipeline configs
-├── docker-compose.yml # Local setup
+├── kafka/                   # Kafka setup and topic configs
+├── ci-cd/                   # GitLab CI/CD pipeline configs
+├── docker-compose.yml       # Local setup
 └── README.md
-
-yaml
-Copy
-Edit
+````
 
 ---
 
 ## 🛠️ Setup Instructions
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-org/stock-market-tracker.git
 cd stock-market-tracker
-2. Start services (Kafka, MongoDB, Cassandra)
-bash
-Copy
-Edit
+```
+
+### 2. Start Services (Kafka, MongoDB, Cassandra)
+
+```bash
 docker-compose up -d
-3. Install dependencies
-bash
-Copy
-Edit
+```
+
+### 3. Install Dependencies
+
+```bash
 # Backend
 cd server
 npm install
@@ -81,10 +86,11 @@ npm install
 # Frontend
 cd ../client
 npm install
-4. Run locally
-bash
-Copy
-Edit
+```
+
+### 4. Run Locally
+
+```bash
 # Start backend API & consumer
 cd server
 npm run dev
@@ -92,33 +98,35 @@ npm run dev
 # Start frontend
 cd ../client
 npm start
-📡 WebSocket Usage
-Client connects to ws://localhost:PORT/
+```
 
-Emits subscribe events with symbols like "AAPL" or "TSLA"
+---
 
-Server pushes updates like:
+## 📡 WebSocket Usage
 
-json
-Copy
-Edit
+* Client connects to: `ws://localhost:<PORT>/`
+* Emits `subscribe` events with symbols like `"AAPL"` or `"TSLA"`
+* Server pushes updates like:
+
+```json
 {
   "symbol": "AAPL",
   "price": 193.24,
   "timestamp": "2025-07-01T12:00:00Z"
 }
-🧪 Testing
-API tests: jest (in server/)
+```
 
-Frontend tests: React Testing Library
+---
 
-Kafka mocking: kafkajs-mock
+## 🧪 Testing
 
-Run tests:
+* **API Tests**: `jest` (in `server/`)
+* **Frontend Tests**: `React Testing Library`
+* **Kafka Mocks**: `kafkajs-mock`
 
-bash
-Copy
-Edit
+### Run Tests
+
+```bash
 # Server
 cd server
 npm test
@@ -126,33 +134,50 @@ npm test
 # Client
 cd ../client
 npm test
-🔄 GitLab CI/CD
-.gitlab-ci.yml defines:
+```
 
-Lint & test
+---
 
-Docker build
+## 🔄 GitLab CI/CD
 
-Push to registry
+The `.gitlab-ci.yml` includes:
 
-Deploy to staging/production via SSH/K8s
+* Linting & testing
+* Docker image build
+* Push to registry
+* Deploy to staging/production via SSH or Kubernetes
 
-📊 Future Enhancements
-Add Redis for caching real-time leaderboard & alerts
+---
 
-Use Apache Flink for advanced stream analytics
+## 📊 Future Enhancements
 
-Add user notifications via email/SMS
+* Add **Redis** for real-time leaderboard & alert caching
+* Use **Apache Flink** for stream processing & analytics
+* Implement user notifications via **email/SMS**
+* Add authentication with **OAuth2 / JWT**
 
-Add authentication (OAuth2 / JWT)
+---
 
-🤝 Contributing
-Fork this repo
+## 🤝 Contributing
 
-Create your feature branch: git checkout -b feature/foo
+1. Fork this repo
+2. Create your feature branch:
 
-Commit your changes: git commit -m 'add foo feature'
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit your changes:
 
-Push to the branch: git push origin feature/foo
+   ```bash
+   git commit -m "feat: add your feature"
+   ```
+4. Push to the branch:
 
-Open a pull request 🎉
+   ```bash
+   git push origin feature/your-feature
+   ```
+5. Open a pull request 🎉
+
+---
+
+
